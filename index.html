@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff1f5">
+<meta name="description" content="Pờm ♡ Mei - Our little love story">
+<title>Pờm ♡ Mei | Our Love Story</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #e98ba8;
+  --pink-dark: #d87596;
+  --dark: #684354;
+  --muted: #a78290;
+  --glass: rgba(255,255,255,.76);
+  --border: #f5dce4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--dark);
+  background:
+    radial-gradient(ellipse at 10% 10%, #ffe0e9, transparent 38%),
+    radial-gradient(ellipse at 90% 85%, #fbd9e4, transparent 40%),
+    linear-gradient(135deg,#fff8f8,#fff0f4);
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus-visible {
+  outline: 3px solid #d87596;
+  outline-offset: 4px;
+}
+
+/* BACKGROUND */
+
+.glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: .35;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glow.one {
+  background: #ffb9ce;
+  top: -130px;
+  right: -100px;
+}
+
+.glow.two {
+  background: #f3c8db;
+  bottom: -150px;
+  left: -100px;
+}
+
+/* NAVBAR */
+
+nav {
+  width: min(1000px,90%);
+  margin: auto;
+  padding: 27px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+
+.logo span {
+  color: var(--pink);
+}
+
+.nav-tag {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  border: 1px solid #f3d5df;
+  padding: 9px 15px;
+  border-radius: 30px;
+  background: #ffffff80;
+}
+
+/* HERO */
+
+.hero {
+  width: 100%;
+  min-height: 82vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 15px 70px;
+}
+
+.card {
+  position: relative;
+  width: min(720px,100%);
+  padding: 65px 35px;
+  text-align: center;
+  background: var(--glass);
+  border: 1px solid white;
+  border-radius: 32px;
+  box-shadow: 0 25px 90px #c981991a;
+  backdrop-filter: blur(20px);
+  animation: appear 1s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--pink);
+  font-weight: 700;
+}
+
+h1 {
+  font-family: 'Playfair Display',serif;
+  font-weight: 500;
+  font-size: clamp(48px,9vw,85px);
+  line-height: 1.15;
+  margin: 25px 0 17px;
+  letter-spacing: -2px;
+}
+
+h1 .heart-line {
+  display: block;
+  color: var(--pink);
+  font-style: italic;
+  font-size: .7em;
+  margin: 7px 0;
+}
+
+.real-names {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-top: 15px;
+}
+
+.description {
+  max-width: 470px;
+  margin: 22px auto 0;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--muted);
+}
+
+/* HEART */
+
+.main-heart {
+  margin: 32px auto 25px;
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #e67e9e;
+  background: #ffe7ee;
+  font-size: 28px;
+  animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  15% { transform: scale(1.13); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.09); }
+}
+
+/* MESSAGE */
+
+.message-box {
+  min-height: 70px;
+  max-width: 470px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Playfair Display',serif;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #916b7a;
+  transition: opacity .3s;
+}
+
+.primary-btn {
+  margin-top: 22px;
+  padding: 14px 27px;
+  border: 0;
+  border-radius: 40px;
+  background: linear-gradient(120deg,#eea0b6,#df7f9e);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 25px #dc829b35;
+  transition: .25s;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px #dc829b50;
+}
+
+/* COUNTER */
+
+.section {
+  width: min(720px,90%);
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Playfair Display',serif;
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.section-desc {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.counter {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 12px;
+  margin: 30px auto 15px;
+}
+
+.counter-item {
+  padding: 19px 5px;
+  border: 1px solid var(--border);
+  background: #ffffffa0;
+  border-radius: 18px;
+}
+
+.counter-number {
+  display: block;
+  font-size: clamp(23px,5vw,35px);
+  font-weight: 700;
+  color: var(--pink);
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.counter-note {
+  font-size: 11px;
+  color: #b38c99;
+  margin-top: 14px;
+}
+
+/* LOVE LETTER */
+
+.love-note {
+  width: min(720px,90%);
+  margin: 0 auto 70px;
+  padding: 35px;
+  text-align: center;
+  border: 1px solid var(--border);
+  background: #ffffffa0;
+  border-radius: 25px;
+  box-shadow: 0 15px 50px #c9819910;
+}
+
+.love-note h2 {
+  font-family: 'Playfair Display',serif;
+  font-size: 27px;
+  margin-bottom: 17px;
+}
+
+.love-note p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* GALLERY */
+
+.gallery {
+  width: min(720px,90%);
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.gallery-box {
+  min-height: 180px;
+  border-radius: 22px;
+  background: linear-gradient(145deg,#ffe2eb,#fff5f7);
+  border: 1px solid white;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  color: #bd8397;
+  font-family: 'Playfair Display',serif;
+  font-style: italic;
+  font-size: 17px;
+  overflow: hidden;
+}
+
+.gallery-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 15px;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 25px 15px 35px;
+  font-size: 11px;
+  color: #b38c99;
+  letter-spacing: 2px;
+}
+
+/* FLOATING HEARTS */
+
+.float-heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  color: #e98ba8;
+  animation: floatUp linear forwards;
+  z-index: 10;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 0;
+  }
+  15% { opacity: .65; }
+  85% { opacity: .4; }
+  100% {
+    transform: translateY(-110vh) rotate(40deg);
+    opacity: 0;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:520px) {
+  nav {
+    width: 92%;
+    padding: 20px 0;
+  }
+
+  .nav-tag {
+    font-size: 9px;
+    padding: 8px;
+  }
+
+  .hero {
+    min-height: 75vh;
+  }
+
+  .card {
+    padding: 50px 20px;
+    border-radius: 25px;
+  }
+
+  .counter {
+    gap: 6px;
+  }
+
+  .counter-item {
+    padding: 14px 3px;
+    border-radius: 13px;
+  }
+
+  .counter-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .love-note {
+    padding: 25px 18px;
+  }
+
+  .gallery-grid {
+    gap: 9px;
+  }
+
+  .gallery-box {
+    min-height: 130px;
+    font-size: 14px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<nav>
+  <div class="logo">PỜM <span>♡</span> MEI</div>
+  <div class="nav-tag">A LITTLE WORLD FOR TWO</div>
+</nav>
+
+<main>
+
+<!-- MAIN HERO -->
+
+<section class="hero">
+  <div class="card">
+
+    <div class="eyebrow">
+      OUR LITTLE LOVE STORY
+    </div>
+
+    <h1>
+      Pờm
+      <span class="heart-line">♡</span>
+      Mei
+    </h1>
+
+    <div class="real-names">
+      DUY HÙNG × HỒNG NGÂN
+    </div>
+
+    <p class="description">
+      Giữa hàng triệu người ngoài kia,
+      thật tuyệt khi chúng mình có thể gặp nhau.
+      Đây là một góc nhỏ dành riêng cho Pờm và Mei.
+    </p>
+
+    <div class="main-heart">♥</div>
+
+    <div class="message-box" id="message">
+      Một chút yêu thương được gửi đến Mei. ♡
+    </div>
+
+    <button class="primary-btn" onclick="newMessage()">
+      Một lời nhắn dành cho Mei ♡
+    </button>
+
+  </div>
+</section>
+
+<!-- TIME COUNTER -->
+
+<section class="section">
+
+  <h2 class="section-title">
+    Our time together
+  </h2>
+
+  <p class="section-desc">
+    Từng giây trôi qua đều là một phần trong câu chuyện của chúng mình.
+  </p>
+
+  <div class="counter">
+
+    <div class="counter-item">
+      <span class="counter-number" id="days">--</span>
+      <span class="counter-label">Days</span>
+    </div>
+
+    <div class="counter-item">
+      <span class="counter-number" id="hours">--</span>
+      <span class="counter-label">Hours</span>
+    </div>
+
+    <div class="counter-item">
+      <span class="counter-number" id="minutes">--</span>
+      <span class="counter-label">Minutes</span>
+    </div>
+
+    <div class="counter-item">
+      <span class="counter-number" id="seconds">--</span>
+      <span class="counter-label">Seconds</span>
+    </div>
+
+  </div>
+
+  <p class="counter-note" id="counterNote">
+    31 October 2026 · Our special day ♡
+  </p>
+
+</section>
+
+<!-- LOVE LETTER -->
+
+<section class="love-note">
+
+  <h2>To my favorite person ♡</h2>
+
+  <p>
+    Gửi Mei,
+
+    <br><br>
+
+    Có những người xuất hiện và khiến
+    những ngày bình thường trở nên đặc biệt hơn.
+
+    <br>
+
+    Pờm mong rằng chúng mình sẽ luôn dành cho nhau
+    sự chân thành, quan tâm và thật nhiều niềm vui.
+
+    <br><br>
+
+    Không cần một câu chuyện hoàn hảo,
+    chỉ cần chúng mình cùng viết tiếp câu chuyện ấy.
+
+    <br><br>
+
+    With love,
+
+    <br>
+
+    Pờm ♡
+  </p>
+
+</section>
+
+<!-- MEMORY GALLERY -->
+
+<section class="gallery">
+
+  <h2 class="section-title">
+    Our little memories
+  </h2>
+
+  <p class="section-desc">
+    Những khoảnh khắc đáng nhớ của Pờm và Mei.
+  </p>
+
+  <div class="gallery-grid">
+
+    <div class="gallery-box">
+      Our first memory ♡
+    </div>
+
+    <div class="gallery-box">
+      A lovely moment ♥
+    </div>
+
+    <div class="gallery-box">
+      You & Me
+    </div>
+
+    <div class="gallery-box">
+      Forever memories ♡
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  PỜM × MEI · MADE WITH ♡
+  <br><br>
+  DUY HÙNG & HỒNG NGÂN · 31.10.2026
+</footer>
+
+<script>
+
+// =====================================
+// ANNIVERSARY DATE
+// Ngày bắt đầu: 31/10/2026
+// =====================================
+
+const START_DATE = "2026-10-31";
+
+// =====================================
+// RANDOM LOVE MESSAGES
+// =====================================
+
+const messages = [
+
+  "Mei là một điều thật đáng yêu trong thế giới của Pờm. ♡",
+
+  "Mong chúng mình luôn biết trân trọng nhau.",
+
+  "Mỗi ngày đều là một cơ hội để tạo thêm kỷ niệm đẹp.",
+
+  "Cảm ơn Mei vì đã xuất hiện trong cuộc sống của Pờm. ♥",
+
+  "Chúc cho câu chuyện của chúng mình luôn có thật nhiều niềm vui.",
+
+  "Một chút yêu thương, dành riêng cho Mei. ♡",
+
+  "Pờm hy vọng Mei luôn có thật nhiều niềm vui.",
+
+  "Hai người, hai trái tim và một câu chuyện đáng nhớ. ♥"
+
+];
+
+let lastMessage = -1;
+
+function newMessage() {
+
+  const el = document.getElementById("message");
+
+  el.style.opacity = 0;
+
+  setTimeout(() => {
+
+    let random;
+
+    do {
+      random = Math.floor(Math.random() * messages.length);
+    } while (
+      messages.length > 1 && random === lastMessage
+    );
+
+    lastMessage = random;
+
+    el.textContent = messages[random];
+
+    el.style.opacity = 1;
+
+  },250);
+
+  for(let i=0;i<5;i++) {
+
+    setTimeout(createHeart,i*130);
+
+  }
+
+}
+
+// =====================================
+// TIME COUNTER
+// =====================================
+
+function updateCounter() {
+
+  const start = new Date(START_DATE + "T00:00:00");
+
+  const now = new Date();
+
+  const elements = [
+    "days",
+    "hours",
+    "minutes",
+    "seconds"
+  ];
+
+  if(isNaN(start.getTime())) return;
+
+  if(now < start) {
+
+    elements.forEach(id => {
+      document.getElementById(id).textContent = "--";
+    });
+
+    document.getElementById("counterNote").textContent =
+      "Câu chuyện của chúng mình sẽ bắt đầu vào 31.10.2026 ♡";
+
+    return;
+  }
+
+  let diff = Math.floor((now.getTime()-start.getTime())/1000);
+
+  const d = Math.floor(diff/86400);
+
+  diff %= 86400;
+
+  const h = Math.floor(diff/3600);
+
+  diff %= 3600;
+
+  const m = Math.floor(diff/60);
+
+  const s = diff%60;
+
+  document.getElementById("days").textContent = d;
+
+  document.getElementById("hours").textContent =
+    String(h).padStart(2,"0");
+
+  document.getElementById("minutes").textContent =
+    String(m).padStart(2,"0");
+
+  document.getElementById("seconds").textContent =
+    String(s).padStart(2,"0");
+
+  document.getElementById("counterNote").textContent =
+    "Từng giây trôi qua, thêm một kỷ niệm được viết tiếp. ♡";
+
+}
+
+// =====================================
+// FLOATING HEARTS
+// =====================================
+
+function createHeart() {
+
+  const heart = document.createElement("span");
+
+  heart.className = "float-heart";
+
+  heart.textContent =
+    Math.random() > 0.5 ? "♡" : "♥";
+
+  heart.style.left =
+    Math.random()*100 + "vw";
+
+  heart.style.fontSize =
+    (13+Math.random()*18) + "px";
+
+  heart.style.animationDuration =
+    (5+Math.random()*4) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  },9500);
+
+}
+
+// =====================================
+// START
+// =====================================
+
+updateCounter();
+
+setInterval(updateCounter,1000);
+
+setInterval(() => {
+
+  if(Math.random() > 0.4) {
+    createHeart();
+  }
+
+},1400);
+
+</script>
+
+</body>
+</html>

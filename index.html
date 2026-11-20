@@ -4,13 +4,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f9f5f2">
-<title>Pờm ♡ Mei</title>
-<meta name="description" content="Tình yêu của 2 tụi tui ♡">
-<meta property="og:title" content="Pờm ♡ Mei">
-<meta property="og:description" content="Tình yêu của 2 tụi tui ♡">
-<meta property="og:image" content="https://pom-love-mei.duyhunglimited.workers.dev/preview.jpg">
+<meta name="theme-color" content="#faf5f2">
+
+<title>Pờm yêu Mei ♡ Duy Hùng & Hồng Ngân</title>
+<meta name="description" content="Một góc nhỏ tình yêu của chúng mình ♡">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pờm yêu Mei ♡">
+<meta property="og:description" content="Duy Hùng ♡ Hồng Ngân — Một góc nhỏ tình yêu của chúng mình.">
 <meta property="og:url" content="https://pom-love-mei.duyhunglimited.workers.dev/">
+<meta property="og:image" content="https://pom-love-mei.duyhunglimited.workers.dev/preview.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,62 +22,85 @@
 
 <style>
 :root {
-  --bg: #f9f5f2;
-  --white: #fffdfb;
-  --pink: #c98d91;
-  --pink-light: #f2e2df;
-  --text: #514346;
-  --muted: #a18d8e;
-  --border: #eee3df;
+  --background: #faf6f3;
+  --surface: #fffdfb;
+  --pink: #c98f96;
+  --pink-light: #f6e9e6;
+  --text: #57474a;
+  --muted: #a28e90;
+  --border: #eee4df;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: var(--background);
   color: var(--text);
   font-family: "DM Sans", sans-serif;
 }
 
-button { font: inherit; }
+button {
+  font: inherit;
+}
+
+/* MÀN HÌNH MỞ ĐẦU */
 
 .intro {
   position: fixed;
   inset: 0;
-  z-index: 20;
+  z-index: 100;
   display: grid;
   place-items: center;
-  padding: 25px;
+  padding: 24px;
   text-align: center;
-  background: var(--bg);
-  transition: opacity .7s, visibility .7s;
+  background: var(--background);
+  transition: opacity .7s ease, visibility .7s ease;
 }
 
 .intro.hide {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
-.intro-inner { max-width: 500px; }
+.intro-content {
+  width: 100%;
+  max-width: 500px;
+}
 
 .intro-label {
+  color: var(--pink);
   font-size: 10px;
   letter-spacing: 5px;
-  color: var(--pink);
   text-transform: uppercase;
 }
 
 .intro h1 {
-  font: 600 clamp(38px, 8vw, 65px)/1.2 "Playfair Display", serif;
   margin: 25px 0 20px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 8vw, 65px);
+  line-height: 1.2;
+  font-weight: 600;
 }
 
 .intro-names {
-  font: 30px Pacifico, cursive;
   color: var(--pink);
+  font-family: "Pacifico", cursive;
+  font-size: 29px;
+  margin-bottom: 12px;
+}
+
+.intro-realnames {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 2px;
   margin-bottom: 12px;
 }
 
@@ -85,61 +111,89 @@ button { font: inherit; }
   margin-bottom: 35px;
 }
 
-.open-btn {
-  background: var(--text);
-  color: white;
+.open-button {
   border: 0;
   border-radius: 40px;
   padding: 15px 27px;
+  background: var(--text);
+  color: white;
   cursor: pointer;
   transition: .25s;
 }
 
-.open-btn:hover { background: var(--pink); }
+.open-button:hover {
+  background: var(--pink);
+  transform: translateY(-2px);
+}
+
+/* NỘI DUNG CHÍNH */
 
 main {
   display: none;
+  width: 100%;
   max-width: 900px;
   margin: auto;
   padding: 45px 22px 80px;
-  animation: fade .8s ease;
+  animation: appear .8s ease;
 }
 
-main.show { display: block; }
-
-@keyframes fade {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+main.show {
+  display: block;
 }
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TIÊU ĐỀ */
 
 .header {
   text-align: center;
   margin-bottom: 35px;
 }
 
-.header small {
+.header-label {
   color: var(--pink);
   font-size: 10px;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   text-transform: uppercase;
 }
 
 .header h2 {
-  font: 600 clamp(38px, 7vw, 58px) "Playfair Display", serif;
-  margin: 14px 0 8px;
+  margin: 15px 0 10px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(38px, 7vw, 58px);
+  font-weight: 600;
 }
 
-.header p {
-  font-size: 13px;
-  color: var(--muted);
+.header-names {
+  color: var(--pink);
+  font-family: "Pacifico", cursive;
+  font-size: 20px;
+  margin-bottom: 13px;
 }
+
+.header-description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* KHUNG CÁC PHẦN */
 
 .section {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 20px;
   padding: clamp(20px, 4vw, 32px);
   margin-bottom: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
 }
 
 .section-title {
@@ -148,15 +202,20 @@ main.show { display: block; }
 }
 
 .section-title h3 {
-  font: 600 30px "Playfair Display", serif;
   margin: 0 0 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .section-title p {
   color: var(--muted);
   font-size: 12px;
+  line-height: 1.7;
   margin: 0;
 }
+
+/* ALBUM */
 
 .album {
   display: grid;
@@ -165,13 +224,14 @@ main.show { display: block; }
 }
 
 .photo {
+  display: block;
   padding: 0;
   border: 0;
-  background: var(--pink-light);
   border-radius: 13px;
   overflow: hidden;
-  cursor: pointer;
+  background: var(--pink-light);
   aspect-ratio: 4 / 5;
+  cursor: pointer;
 }
 
 .photo img {
@@ -179,22 +239,30 @@ main.show { display: block; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .4s;
+  transition: transform .4s ease;
 }
 
-.photo:hover img { transform: scale(1.04); }
+.photo:hover img {
+  transform: scale(1.045);
+}
 
-.counter { text-align: center; }
+/* BỘ ĐẾM */
+
+.counter {
+  text-align: center;
+}
 
 .counter h3 {
-  font: 600 29px "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
+  font-size: 29px;
+  font-weight: 600;
   margin: 0 0 10px;
 }
 
-.counter p {
+.counter-description {
   color: var(--muted);
   font-size: 12px;
-  margin-bottom: 25px;
+  margin: 0 0 25px;
 }
 
 .time-grid {
@@ -204,24 +272,28 @@ main.show { display: block; }
 }
 
 .time-item {
+  padding: 17px 4px;
   background: #faf3f0;
   border-radius: 13px;
-  padding: 17px 4px;
 }
 
 .time-item strong {
   display: block;
   color: var(--pink);
-  font: 600 clamp(23px, 5vw, 34px) "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(23px, 5vw, 34px);
+  font-weight: 600;
 }
 
 .time-item span {
   display: block;
+  margin-top: 5px;
   color: var(--muted);
   font-size: 10px;
-  margin-top: 5px;
   letter-spacing: 1px;
 }
+
+/* NHẠC */
 
 .song {
   display: flex;
@@ -229,29 +301,30 @@ main.show { display: block; }
   gap: 15px;
 }
 
-.song-art {
+.song-cover {
+  display: grid;
+  place-items: center;
   width: 65px;
   height: 65px;
   flex-shrink: 0;
   border-radius: 13px;
-  display: grid;
-  place-items: center;
   background: var(--pink-light);
   color: var(--pink);
   font-size: 28px;
 }
 
-.song-info { min-width: 0; }
-
 .song-info strong {
   display: block;
-  font: 600 18px "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .song-info small {
   display: block;
   margin-top: 6px;
   color: var(--muted);
+  font-size: 12px;
 }
 
 .controls {
@@ -273,11 +346,11 @@ main.show { display: block; }
 }
 
 .controls .play {
+  width: 48px;
+  height: 48px;
   background: var(--text);
   color: white;
   border: 0;
-  width: 48px;
-  height: 48px;
 }
 
 .progress {
@@ -291,37 +364,44 @@ main.show { display: block; }
 
 .progress input {
   flex: 1;
+  min-width: 0;
   accent-color: var(--pink);
   cursor: pointer;
-  min-width: 0;
 }
 
-.status {
-  color: var(--muted);
-  text-align: center;
-  font-size: 11px;
+.music-status {
   margin: 13px 0 0;
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
 }
+
+/* CUỐI TRANG */
 
 .footer {
-  text-align: center;
   padding: 25px 0 0;
+  text-align: center;
   color: var(--muted);
-  font: 17px Pacifico, cursive;
+  font-family: "Pacifico", cursive;
+  font-size: 17px;
 }
 
+/* XEM ẢNH */
+
 .lightbox {
-  display: none;
   position: fixed;
   inset: 0;
-  z-index: 50;
-  background: #201719ed;
+  z-index: 200;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  background: #201719ed;
 }
 
-.lightbox.active { display: flex; }
+.lightbox.active {
+  display: flex;
+}
 
 .lightbox img {
   max-width: 95%;
@@ -341,6 +421,28 @@ main.show { display: block; }
   cursor: pointer;
 }
 
+/* NÚT BẬT NHẠC DỰ PHÒNG */
+
+.enable-music {
+  display: none;
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  z-index: 150;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 30px;
+  background: var(--text);
+  color: white;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.enable-music.visible {
+  display: block;
+}
+
 #youtube-player {
   position: fixed;
   width: 200px;
@@ -349,127 +451,207 @@ main.show { display: block; }
   top: -1000px;
 }
 
-.enable-music {
-  display: none;
-  position: fixed;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 0;
-  border-radius: 30px;
-  padding: 12px 20px;
-  background: var(--text);
-  color: white;
-  z-index: 30;
-  cursor: pointer;
-  white-space: nowrap;
-}
+/* ĐIỆN THOẠI */
 
-.enable-music.visible { display: block; }
+@media (max-width: 600px) {
+  main {
+    padding: 30px 14px 60px;
+  }
 
-@media(max-width: 600px) {
-  main { padding: 30px 14px 60px; }
-  .album { grid-template-columns: 1fr; }
-  .photo { aspect-ratio: 4 / 3; }
-  .section { padding: 20px 16px; }
-  .time-grid { gap: 5px; }
-  .time-item { padding: 13px 2px; }
+  .album {
+    grid-template-columns: 1fr;
+  }
+
+  .photo {
+    aspect-ratio: 4 / 3;
+  }
+
+  .section {
+    padding: 20px 16px;
+  }
+
+  .time-grid {
+    gap: 5px;
+  }
+
+  .time-item {
+    padding: 13px 2px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- MÀN HÌNH MỞ ĐẦU -->
+
 <div class="intro" id="intro">
-  <div class="intro-inner">
-    <div class="intro-label">A little world for two</div>
-    <h1>Tình yêu của<br>2 tụi tui ♡</h1>
-    <div class="intro-names">Pờm ♡ Mei</div>
+  <div class="intro-content">
+    <div class="intro-label">Dành riêng cho hai chúng mình</div>
+
+    <h1>Pờm yêu Mei ♡</h1>
+
+    <div class="intro-names">Duy Hùng ♡ Hồng Ngân</div>
+
     <div class="intro-date">31 · 10 · 2026</div>
-    <button class="open-btn" onclick="openWebsite()">
-      Mở thế giới của chúng mình ♡
+
+    <button class="open-button" onclick="openWebsite()">
+      Mở góc nhỏ của chúng mình ♡
     </button>
   </div>
 </div>
 
+<!-- TRANG CHÍNH -->
+
 <main id="main">
+
   <header class="header">
-    <small>Our little world</small>
-    <h2>Pờm ♡ Mei</h2>
-    <p>Welcome to our little corner of happiness.</p>
+    <div class="header-label">Duy Hùng ♡ Hồng Ngân</div>
+
+    <h2>Pờm yêu Mei</h2>
+
+    <div class="header-names">Một góc nhỏ tình yêu của chúng mình</div>
+
+    <div class="header-description">
+      Nơi lưu giữ những khoảnh khắc đáng nhớ của hai đứa.
+    </div>
   </header>
 
+  <!-- ALBUM -->
+
   <section class="section">
+
     <div class="section-title">
       <h3>Vợ iu ♡</h3>
-      <p>Những khoảnh khắc muốn giữ lại thật lâu.</p>
+      <p>Những khoảnh khắc Pờm muốn lưu giữ thật lâu.</p>
     </div>
 
     <div class="album">
+
       <button class="photo" onclick="showPhoto(0)">
-        <img src="https://cdn.discordapp.com/attachments/1572538195915046993/1572562194665574410/file_00000000bb8c8211a5d9b5554bbe9d9c.png?ex=6aff7aec&is=6afe296c&hm=ebdf8b4b2507e8c31c7f3aa19f580419bc28e9c75ac35d25d278611f9e1a6890" alt="Ảnh kỷ niệm 1">
+        <img
+          src="https://cdn.discordapp.com/attachments/1572538195915046993/1572562194665574410/file_00000000bb8c8211a5d9b5554bbe9d9c.png?ex=6aff7aec&is=6afe296c&hm=ebdf8b4b2507e8c31c7f3aa19f580419bc28e9c75ac35d25d278611f9e1a6890"
+          alt="Kỷ niệm của chúng mình 1">
       </button>
 
       <button class="photo" onclick="showPhoto(1)">
-        <img src="https://cdn.discordapp.com/attachments/1572538195915046993/1572562194959302758/image.webp?ex=6aff7aec&is=6afe296c&hm=64812789404cd5271a2c464fe69e7041a0496be930f6caefac22e04de8bf1f66" alt="Ảnh kỷ niệm 2">
+        <img
+          src="https://cdn.discordapp.com/attachments/1572538195915046993/1572562194959302758/image.webp?ex=6aff7aec&is=6afe296c&hm=64812789404cd5271a2c464fe69e7041a0496be930f6caefac22e04de8bf1f66"
+          alt="Kỷ niệm của chúng mình 2">
       </button>
 
       <button class="photo" onclick="showPhoto(2)">
-        <img src="https://cdn.discordapp.com/attachments/1572538195915046993/1572562195345055807/image_1.webp?ex=6aff7aec&is=6afe296c&hm=ec1dd0e3ad20e515c016ecfc61c3064870807aa61385e0b64f419fc37a57a135" alt="Ảnh kỷ niệm 3">
+        <img
+          src="https://cdn.discordapp.com/attachments/1572538195915046993/1572562195345055807/image_1.webp?ex=6aff7aec&is=6afe296c&hm=ec1dd0e3ad20e515c016ecfc61c3064870807aa61385e0b64f419fc37a57a135"
+          alt="Kỷ niệm của chúng mình 3">
       </button>
+
     </div>
   </section>
 
+  <!-- THỜI GIAN YÊU NHAU -->
+
   <section class="section">
+
     <div class="counter">
-      <h3>Our time together ♡</h3>
-      <p>Thời gian chúng mình đã có nhau.</p>
+      <h3>Thời gian chúng mình bên nhau ♡</h3>
+
+      <p class="counter-description">
+        Từng ngày trôi qua đều là một kỷ niệm đáng nhớ.
+      </p>
 
       <div class="time-grid">
-        <div class="time-item"><strong id="days">0</strong><span>NGÀY</span></div>
-        <div class="time-item"><strong id="hours">00</strong><span>GIỜ</span></div>
-        <div class="time-item"><strong id="minutes">00</strong><span>PHÚT</span></div>
-        <div class="time-item"><strong id="seconds">00</strong><span>GIÂY</span></div>
+
+        <div class="time-item">
+          <strong id="days">0</strong>
+          <span>NGÀY</span>
+        </div>
+
+        <div class="time-item">
+          <strong id="hours">00</strong>
+          <span>GIỜ</span>
+        </div>
+
+        <div class="time-item">
+          <strong id="minutes">00</strong>
+          <span>PHÚT</span>
+        </div>
+
+        <div class="time-item">
+          <strong id="seconds">00</strong>
+          <span>GIÂY</span>
+        </div>
+
       </div>
     </div>
   </section>
 
+  <!-- ÂM NHẠC -->
+
   <section class="section">
+
     <div class="section-title">
-      <h3>Our song ♡</h3>
-      <p>A song for Pờm and Mei.</p>
+      <h3>Bài hát của chúng mình ♡</h3>
+      <p>Một giai điệu dành riêng cho hai đứa.</p>
     </div>
 
     <div class="song">
-      <div class="song-art">♡</div>
+      <div class="song-cover">♡</div>
+
       <div class="song-info">
         <strong>Tình yêu của chúng mình</strong>
-        <small>Pờm ♡ Mei</small>
+        <small>Duy Hùng ♡ Hồng Ngân</small>
       </div>
     </div>
 
     <div class="controls">
-      <button onclick="seekBy(-10)">−10</button>
-      <button class="play" id="playButton" onclick="toggleMusic()">▶</button>
-      <button onclick="seekBy(10)">+10</button>
+      <button onclick="seekBy(-10)" aria-label="Lùi 10 giây">
+        −10
+      </button>
+
+      <button class="play" id="playButton" onclick="toggleMusic()" aria-label="Phát nhạc">
+        ▶
+      </button>
+
+      <button onclick="seekBy(10)" aria-label="Tiến 10 giây">
+        +10
+      </button>
     </div>
 
     <div class="progress">
       <span id="currentTime">0:00</span>
-      <input type="range" id="seekBar" min="0" max="100" value="0" oninput="seekTo(this.value)">
+
+      <input
+        type="range"
+        id="seekBar"
+        min="0"
+        max="100"
+        value="0"
+        oninput="seekTo(this.value)">
+
       <span id="duration">0:00</span>
     </div>
 
-    <p class="status" id="musicStatus">Đang tải bài hát ♡</p>
+    <p class="music-status" id="musicStatus">
+      Đang tải bài hát ♡
+    </p>
+
   </section>
 
-  <div class="footer">Pờm ♡ Mei</div>
+  <footer class="footer">
+    Pờm yêu Mei ♡
+  </footer>
+
 </main>
 
+<!-- PHÓNG TO ẢNH -->
+
 <div class="lightbox" id="lightbox" onclick="closePhoto()">
-  <button onclick="closePhoto()">×</button>
-  <img id="lightboxImage" src="" alt="Ảnh phóng to">
+  <button onclick="closePhoto()" aria-label="Đóng">×</button>
+  <img id="lightboxImage" src="" alt="Ảnh kỷ niệm">
 </div>
+
+<!-- NÚT BẬT NHẠC KHI TRÌNH DUYỆT CHẶN -->
 
 <button class="enable-music" id="enableMusic" onclick="manualPlay()">
   ♫ Bật nhạc ♡
@@ -478,16 +660,19 @@ main.show { display: block; }
 <div id="youtube-player"></div>
 
 <script>
+
+/* ẢNH ALBUM */
+
 const photos = [
   "https://cdn.discordapp.com/attachments/1572538195915046993/1572562194665574410/file_00000000bb8c8211a5d9b5554bbe9d9c.png?ex=6aff7aec&is=6afe296c&hm=ebdf8b4b2507e8c31c7f3aa19f580419bc28e9c75ac35d25d278611f9e1a6890",
+
   "https://cdn.discordapp.com/attachments/1572538195915046993/1572562194959302758/image.webp?ex=6aff7aec&is=6afe296c&hm=64812789404cd5271a2c464fe69e7041a0496be930f6caefac22e04de8bf1f66",
+
   "https://cdn.discordapp.com/attachments/1572538195915046993/1572562195345055807/image_1.webp?ex=6aff7aec&is=6afe296c&hm=ec1dd0e3ad20e515c016ecfc61c3064870807aa61385e0b64f419fc37a57a135"
 ];
 
-let player = null;
-let playerReady = false;
-let playing = false;
-let pendingPlay = false;
+
+/* MỞ WEBSITE */
 
 function openWebsite() {
   document.getElementById("intro").classList.add("hide");
@@ -497,13 +682,15 @@ function openWebsite() {
     startMusic();
   } else {
     pendingPlay = true;
-    document.getElementById("musicStatus").textContent = "Đang mở bài hát ♡";
   }
 
   setTimeout(() => {
     document.getElementById("intro").style.display = "none";
   }, 750);
 }
+
+
+/* ALBUM */
 
 function showPhoto(index) {
   document.getElementById("lightboxImage").src = photos[index];
@@ -514,41 +701,64 @@ function closePhoto() {
   document.getElementById("lightbox").classList.remove("active");
 }
 
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") closePhoto();
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closePhoto();
+  }
 });
 
+
+/* BỘ ĐẾM THỜI GIAN */
+
 function updateCounter() {
-  const start = new Date(2026, 9, 31, 0, 0, 0).getTime();
-  let diff = Math.max(0, Date.now() - start);
+  const startDate = new Date(2026, 9, 31, 0, 0, 0).getTime();
 
-  const days = Math.floor(diff / 86400000);
-  diff %= 86400000;
+  let difference = Math.max(0, Date.now() - startDate);
 
-  const hours = Math.floor(diff / 3600000);
-  diff %= 3600000;
+  const days = Math.floor(difference / 86400000);
+  difference %= 86400000;
 
-  const minutes = Math.floor(diff / 60000);
-  const seconds = Math.floor((diff % 60000) / 1000);
+  const hours = Math.floor(difference / 3600000);
+  difference %= 3600000;
+
+  const minutes = Math.floor(difference / 60000);
+  const seconds = Math.floor((difference % 60000) / 1000);
 
   document.getElementById("days").textContent = days;
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+
+  document.getElementById("hours").textContent =
+    String(hours).padStart(2, "0");
+
+  document.getElementById("minutes").textContent =
+    String(minutes).padStart(2, "0");
+
+  document.getElementById("seconds").textContent =
+    String(seconds).padStart(2, "0");
 }
 
 updateCounter();
 setInterval(updateCounter, 1000);
 
-function formatTime(value) {
-  if (!Number.isFinite(value)) return "0:00";
-  const minutes = Math.floor(value / 60);
-  const seconds = Math.floor(value % 60);
-  return minutes + ":" + String(seconds).padStart(2, "0");
+
+/* YOUTUBE PLAYER */
+
+let player = null;
+let playerReady = false;
+let playing = false;
+let pendingPlay = false;
+
+function formatTime(seconds) {
+  if (!Number.isFinite(seconds)) return "0:00";
+
+  const minutes = Math.floor(seconds / 60);
+  const remaining = Math.floor(seconds % 60);
+
+  return minutes + ":" + String(remaining).padStart(2, "0");
 }
 
 function updateButton() {
-  document.getElementById("playButton").textContent = playing ? "Ⅱ" : "▶";
+  document.getElementById("playButton").textContent =
+    playing ? "Ⅱ" : "▶";
 }
 
 function startMusic() {
@@ -561,9 +771,16 @@ function startMusic() {
     player.unMute();
     player.setVolume(100);
     player.playVideo();
+
     pendingPlay = false;
+
+    document.getElementById("musicStatus").textContent =
+      "Đang phát nhạc ♡";
+
+    document.getElementById("enableMusic").classList.remove("visible");
+
   } catch (error) {
-    showMusicButton();
+    showMusicFallback();
   }
 }
 
@@ -572,8 +789,8 @@ function manualPlay() {
 }
 
 function toggleMusic() {
-  if (!playerReady) {
-    showMusicButton();
+  if (!playerReady || !player) {
+    showMusicFallback();
     return;
   }
 
@@ -585,20 +802,28 @@ function toggleMusic() {
 }
 
 function seekBy(amount) {
-  if (!playerReady) return;
+  if (!playerReady || !player) return;
+
   const current = player.getCurrentTime() || 0;
   const duration = player.getDuration() || 0;
-  player.seekTo(Math.max(0, Math.min(duration, current + amount)), true);
+
+  player.seekTo(
+    Math.max(0, Math.min(duration, current + amount)),
+    true
+  );
 }
 
 function seekTo(value) {
-  if (!playerReady) return;
+  if (!playerReady || !player) return;
+
   const duration = player.getDuration() || 0;
+
   player.seekTo(duration * Number(value) / 100, true);
 }
 
-function showMusicButton() {
+function showMusicFallback() {
   document.getElementById("enableMusic").classList.add("visible");
+
   document.getElementById("musicStatus").textContent =
     "Trình duyệt đang chặn tự phát. Chạm Bật nhạc để nghe nhé.";
 }
@@ -610,58 +835,81 @@ function updateProgress() {
     const current = player.getCurrentTime() || 0;
     const duration = player.getDuration() || 0;
 
-    document.getElementById("currentTime").textContent = formatTime(current);
-    document.getElementById("duration").textContent = formatTime(duration);
+    document.getElementById("currentTime").textContent =
+      formatTime(current);
+
+    document.getElementById("duration").textContent =
+      formatTime(duration);
 
     if (duration > 0) {
-      document.getElementById("seekBar").value = current / duration * 100;
+      document.getElementById("seekBar").value =
+        current / duration * 100;
     }
   } catch (error) {}
 }
 
+
+/* TẢI YOUTUBE API */
+
 const youtubeScript = document.createElement("script");
+
 youtubeScript.src = "https://www.youtube.com/iframe_api";
+
 document.head.appendChild(youtubeScript);
 
 window.onYouTubeIframeAPIReady = function() {
+
   player = new YT.Player("youtube-player", {
+
     width: "200",
     height: "120",
+
     videoId: "EVxUudhkhzM",
+
     playerVars: {
       autoplay: 1,
       controls: 0,
       playsinline: 1,
       rel: 0
     },
+
     events: {
+
       onReady: function() {
         playerReady = true;
 
-        // Thử tự phát khi người xem mở website.
+        // Thử tự phát khi trang được mở.
         try {
           player.unMute();
           player.setVolume(100);
           player.playVideo();
         } catch (error) {
-          showMusicButton();
+          showMusicFallback();
         }
 
-        if (pendingPlay) startMusic();
+        if (pendingPlay) {
+          startMusic();
+        }
 
         setInterval(updateProgress, 500);
       },
 
       onStateChange: function(event) {
+
         if (event.data === YT.PlayerState.PLAYING) {
           playing = true;
           updateButton();
-          document.getElementById("musicStatus").textContent = "Đang phát nhạc ♡";
+
+          document.getElementById("musicStatus").textContent =
+            "Đang phát nhạc ♡";
+
           document.getElementById("enableMusic").classList.remove("visible");
         }
 
-        if (event.data === YT.PlayerState.PAUSED ||
-            event.data === YT.PlayerState.ENDED) {
+        if (
+          event.data === YT.PlayerState.PAUSED ||
+          event.data === YT.PlayerState.ENDED
+        ) {
           playing = false;
           updateButton();
         }
@@ -670,11 +918,16 @@ window.onYouTubeIframeAPIReady = function() {
       onError: function() {
         document.getElementById("musicStatus").textContent =
           "Video không thể phát hoặc không cho phép nhúng.";
-        showMusicButton();
+
+        showMusicFallback();
       }
+
     }
+
   });
+
 };
+
 </script>
 
 </body>
